@@ -24,5 +24,135 @@
                 "Alert: Oxygen Saturation out of safe range!"
             ]
         }
+    },
+    {
+        "timestamp": "2024-11-20T21:48:37.031740",
+        "data": {
+            "heart_rate": 200,
+            "blood_pressure": 140,
+            "oxygen_saturation": 85,
+            "statuses": [
+                "Alert: Heart Rate out of safe range!",
+                "Alert: Blood Pressure out of safe range!",
+                "Alert: Oxygen Saturation out of safe range!"
+            ]
+        }
+    },
+    {
+        "timestamp": "2024-11-20T21:48:37.073557",
+        "data": {
+            "heart_rate": 75,
+            "blood_pressure": 110,
+            "oxygen_saturation": 98,
+            "statuses": [
+                "Heart Rate is within safe range.",
+                "Blood Pressure is within safe range.",
+                "Oxygen Saturation is within safe range."
+            ]
+        }
+    },
+    {
+        "timestamp": "2024-11-20T21:49:45.143007",
+        "data": {
+            "heart_rate": 200,
+            "blood_pressure": 140,
+            "oxygen_saturation": 85,
+            "statuses": [
+                "Alert: Heart Rate out of safe range!",
+                "Alert: Blood Pressure out of safe range!",
+                "Alert: Oxygen Saturation out of safe range!"
+            ]
+        }
+    },
+    {
+        "timestamp": "2024-11-20T21:49:45.188116",
+        "data": {
+            "heart_rate": 75,
+            "blood_pressure": 110,
+            "oxygen_saturation": 98,
+            "statuses": [
+                "Heart Rate is within safe range.",
+                "Blood Pressure is within safe range.",
+                "Oxygen Saturation is within safe range."
+            ]
+        }
+    },
+    {
+        "timestamp": "2024-11-20T21:50:39.118309",
+        "data": {
+            "heart_rate": 200,
+            "blood_pressure": 140,
+            "oxygen_saturation": 85,
+            "statuses": [
+                "Alert: Heart Rate out of safe range!",
+                "Alert: Blood Pressure out of safe range!",
+                "Alert: Oxygen Saturation out of safe range!"
+            ]
+        }
+    },
+    {
+        "timestamp": "2024-11-20T21:50:39.168471",
+        "data": {
+            "heart_rate": 75,
+            "blood_pressure": 110,
+            "oxygen_saturation": 98,
+            "statuses": [
+                "Heart Rate is within safe range.",
+                "Blood Pressure is within safe range.",
+                "Oxygen Saturation is within safe range."
+            ]
+        }
+    },
+    {
+        "timestamp": "2024-11-20T21:51:28.050113",
+        "data": {
+            "heart_rate": 200,
+            "blood_pressure": 140,
+            "oxygen_saturation": 85,
+            "statuses": [
+                "Alert: Heart Rate out of safe range!",
+                "Alert: Blood Pressure out of safe range!",
+                "Alert: Oxygen Saturation out of safe range!"
+            ]
+        }
+    },
+    {
+        "timestamp": "2024-11-20T21:51:28.087630",
+        "data": {
+            "heart_rate": 75,
+            "blood_pressure": 110,
+            "oxygen_saturation": 98,
+            "statuses": [
+                "Heart Rate is within safe range.",
+                "Blood Pressure is within safe range.",
+                "Oxygen Saturation is within safe range."
+            ]
+        }
+    },
+    {
+        "timestamp": "2024-11-20T21:53:30.515582",
+        "data": {
+            "heart_rate": 200,
+            "blood_pressure": 180,
+            "oxygen_saturation": 70,
+            "statuses": [
+                "Alert: Heart Rate out of safe range!",
+                "Alert: Blood Pressure out of safe range!",
+                "Alert: Oxygen Saturation out of safe range!"
+            ]
+        }
+    },
+    {
+        "timestamp": "2024-11-20T21:53:30.515582",
+        "data": {
+            "heart_rate": 75,
+            "blood_pressure": 110,
+            "oxygen_saturation": 98,
+            "statuses": [
+                "Heart Rate is within safe range.",
+                "Blood Pressure is within safe range.",
+                "Oxygen Saturation is within safe range."
+            ]
+        }
     }
 ]

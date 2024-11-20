@@ -1,0 +1,3 @@
+app/__pycache__/
+tests/integration_tests/__pycache__/
+tests/unit_tests/__pycache__/

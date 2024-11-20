@@ -8,7 +8,6 @@ class Test_emergency_service(unittest.TestCase):
 
     def test_contact_hospital(self):
         # Arrange: Prepare input values
-         # Arrange: Prepare input values
         hospital_contact = "123-456-7890"
         expected_result = "Hospital contacted at 123-456-7890."
         self.emergency_service = EmergencyService(hospital_contact, "987-654-3210")
@@ -31,18 +30,3 @@ class Test_emergency_service(unittest.TestCase):
     
         
         
-
-
-if __name__ == '__main__':
-    unittest.main()
-
-
-    def test_dispatch_ambulance(self):
-       pass
-        
-        
-        
-
-
-if __name__ == '__main__':
-    unittest.main()
