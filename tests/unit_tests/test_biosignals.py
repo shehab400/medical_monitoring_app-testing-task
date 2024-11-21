@@ -37,29 +37,18 @@ class TestBiosignal(unittest.TestCase):
         oxygen_in_range = "Oxygen Saturation is within safe range."
         TestMoreRange = 200
         
-        # Test negative values
-        TestNegative = -10
-        heart_negative = "Alert: Heart Rate out of safe range!"
-        blood_negative = "Alert: Blood Pressure out of safe range!"
-        oxygen_negative = "Alert: Oxygen Saturation out of safe range!"
-
-
         # Act: Update the values and check thresholds
         Heart_result_less = self.HeartRte.update_value(TestLessRange)
         Heart_result_in = self.HeartRte.update_value(TestInRange)
         Heart_result_more = self.HeartRte.update_value(TestMoreRange)
-        Heart_result_negative = self.HeartRte.update_value(TestNegative)
         # blood pressure
         blood_Pressure_less = self.BloodPressure.update_value(TestLessRange)
         blood_Pressure_in = self.BloodPressure.update_value(TestInRange)
         blood_Pressure_more = self.BloodPressure.update_value(TestMoreRange)
-        blood_Pressure_negative = self.BloodPressure.update_value(TestNegative)
         #oxygen saturation
         oxygen_saturation_less = self.OxygenSaturation.update_value(TestLessRange)
         oxygen_saturation_in = self.OxygenSaturation.update_value(TestInRange)
         oxygen_saturation_more = self.OxygenSaturation.update_value(TestMoreRange)
-        oxygen_saturation_negative = self.OxygenSaturation.update_value(TestNegative)
-        
 
         # Assert: Check if the results are as expected
         self.assertEqual(Heart_result_less, heart_out_range)
@@ -71,13 +60,30 @@ class TestBiosignal(unittest.TestCase):
         self.assertEqual(oxygen_saturation_less, oxygen_out_range)
         self.assertEqual(oxygen_saturation_in, oxygen_in_range)
         self.assertEqual(oxygen_saturation_more, oxygen_out_range)
-        self.assertEqual(Heart_result_negative, heart_negative)
-        self.assertEqual(blood_Pressure_negative, blood_negative)
-        self.assertEqual(oxygen_saturation_negative, oxygen_negative)
-        
-        
-        
 
+        # Test negative values
+        TestNegative = -10
+        with self.assertRaises(ValueError):
+            self.HeartRte.update_value(TestNegative)
+        with self.assertRaises(ValueError):
+            self.BloodPressure.update_value(TestNegative)
+        with self.assertRaises(ValueError):
+            self.OxygenSaturation.update_value(TestNegative)
+        
+    def test_invalid_update_value(self):
+        # Act & Assert
+        with self.assertRaises(TypeError):
+            self.HeartRte.update_value("invalid")
+        with self.assertRaises(TypeError):
+            self.BloodPressure.update_value("invalid")
+        with self.assertRaises(TypeError):
+            self.OxygenSaturation.update_value("invalid")
+        with self.assertRaises(ValueError):
+            self.HeartRte.update_value(-1)
+        with self.assertRaises(ValueError):
+            self.BloodPressure.update_value(-1)
+        with self.assertRaises(ValueError):
+            self.OxygenSaturation.update_value(-1)
 
 if __name__ == '__main__':
     unittest.main()

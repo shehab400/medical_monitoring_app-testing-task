@@ -28,5 +28,17 @@ class Test_emergency_service(unittest.TestCase):
         # Assert: Check if the result is as expected
         self.assertEqual(result, expected_result)
     
+    def test_invalid_hospital_contact(self):
+        # Arrange: Prepare invalid input values
+        hospital_contact = 1234567890  # Invalid type, should be a string
+        with self.assertRaises(TypeError):
+            self.emergency_service = EmergencyService(hospital_contact, "987-654-3210")
+
+    def test_invalid_ambulance_contact(self):
+        # Arrange: Prepare invalid input values
+        ambulance_contact = 9876543210  # Invalid type, should be a string
+        with self.assertRaises(TypeError):
+            self.emergency_service = EmergencyService("123-456-7890", ambulance_contact)
         
-        
+if __name__ == '__main__':
+    unittest.main()

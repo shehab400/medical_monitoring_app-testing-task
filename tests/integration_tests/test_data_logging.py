@@ -87,5 +87,23 @@ class TestDataLoggerIntegration(unittest.TestCase):
         self.assertEqual(alert_logs[0]["timestamp"], timestamp)
         self.assertEqual(alert_logs[0]["alert"], alert_message)
 
+    def test_invalid_log_biosignal(self):
+        # Arrange
+        timestamp = datetime.now().isoformat()
+        biosignal_data = "Invalid data type"  # Invalid type, should be a dictionary
+
+        # Act & Assert
+        with self.assertRaises(TypeError):
+            self.logger.log_biosignal(timestamp, biosignal_data)
+
+    def test_invalid_log_alert(self):
+        # Arrange
+        timestamp = datetime.now().isoformat()
+        alert_message = 12345  # Invalid type, should be a string
+
+        # Act & Assert
+        with self.assertRaises(TypeError):
+            self.logger.log_alert(timestamp, alert_message)
+
 if __name__ == '__main__':
     unittest.main()

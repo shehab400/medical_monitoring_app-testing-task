@@ -39,6 +39,22 @@
   4. Check if the logs are retrieved correctly.
 - **Expected Result**: The logs should be correctly retrieved.
 
+#### `test_invalid_log_biosignal`
+- **Description**: Tests handling of invalid biosignal data input.
+- **Steps**:
+  1. Prepare invalid biosignal data input (non-dictionary type).
+  2. Attempt to log the invalid biosignal data.
+  3. Check if a `TypeError` is raised.
+- **Expected Result**: A `TypeError` should be raised.
+
+#### `test_invalid_log_alert`
+- **Description**: Tests handling of invalid alert message input.
+- **Steps**:
+  1. Prepare invalid alert message input (non-string type).
+  2. Attempt to log the invalid alert message.
+  3. Check if a `TypeError` is raised.
+- **Expected Result**: A `TypeError` should be raised.
+
 ## Test Monitoring Workflow
 
 ### Test Cases
@@ -66,6 +82,14 @@
   2. Handle the emergency.
   3. Check if the alerts are as expected.
 - **Expected Result**: The alerts should be logged correctly.
+
+#### `test_invalid_monitor_patient`
+- **Description**: Tests handling of invalid patient monitoring input.
+- **Steps**:
+  1. Prepare invalid patient monitoring input (non-integer type for heart rate, blood pressure, or oxygen saturation).
+  2. Attempt to monitor the patient with invalid input.
+  3. Check if a `TypeError` is raised.
+- **Expected Result**: A `TypeError` should be raised.
 
 ## Test Performance
 
@@ -121,6 +145,14 @@
   2. Check if the results are as expected.
 - **Expected Result**: The statuses should indicate alerts for values out of range.
 
+#### `test_invalid_update_value`
+- **Description**: Tests handling of invalid biosignal value input.
+- **Steps**:
+  1. Prepare invalid biosignal value input (non-integer type or negative value).
+  2. Attempt to update the biosignal value with invalid input.
+  3. Check if a `TypeError` or `ValueError` is raised.
+- **Expected Result**: A `TypeError` or `ValueError` should be raised.
+
 ## Test Data Logger
 
 ### Test Cases
@@ -150,6 +182,22 @@
   4. Check if the logs are retrieved correctly.
 - **Expected Result**: The logs should be correctly retrieved.
 
+#### `test_invalid_log_biosignal`
+- **Description**: Tests handling of invalid biosignal data input.
+- **Steps**:
+  1. Prepare invalid biosignal data input (non-dictionary type).
+  2. Attempt to log the invalid biosignal data.
+  3. Check if a `TypeError` is raised.
+- **Expected Result**: A `TypeError` should be raised.
+
+#### `test_invalid_log_alert`
+- **Description**: Tests handling of invalid alert message input.
+- **Steps**:
+  1. Prepare invalid alert message input (non-string type).
+  2. Attempt to log the invalid alert message.
+  3. Check if a `TypeError` is raised.
+- **Expected Result**: A `TypeError` should be raised.
+
 ## Test Device
 
 ### Test Cases
@@ -162,6 +210,14 @@
   3. Read signals with values above range.
   4. Check if the results are as expected.
 - **Expected Result**: The statuses should indicate alerts for values out of range and normal statuses for values within range.
+
+#### `test_invalid_read_signals`
+- **Description**: Tests handling of invalid signal input.
+- **Steps**:
+  1. Prepare invalid signal input (non-integer type for heart rate, blood pressure, or oxygen saturation).
+  2. Attempt to read signals with invalid input.
+  3. Check if a `TypeError` is raised.
+- **Expected Result**: A `TypeError` should be raised.
 
 ## Test Emergency Service
 
@@ -182,3 +238,19 @@
   2. Call the `dispatch_ambulance` method.
   3. Check if the result is as expected.
 - **Expected Result**: The result should indicate that an ambulance was dispatched.
+
+#### `test_invalid_hospital_contact`
+- **Description**: Tests handling of invalid hospital contact input.
+- **Steps**:
+  1. Prepare invalid hospital contact input (non-string type).
+  2. Attempt to initialize `EmergencyService` with invalid input.
+  3. Check if a `TypeError` is raised.
+- **Expected Result**: A `TypeError` should be raised.
+
+#### `test_invalid_ambulance_contact`
+- **Description**: Tests handling of invalid ambulance contact input.
+- **Steps**:
+  1. Prepare invalid ambulance contact input (non-string type).
+  2. Attempt to initialize `EmergencyService` with invalid input.
+  3. Check if a `TypeError` is raised.
+- **Expected Result**: A `TypeError` should be raised.

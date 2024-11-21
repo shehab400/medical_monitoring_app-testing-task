@@ -13,6 +13,14 @@ class MedicalMonitoringApp:
         self.logger = DataLogger()  # Integrating DataLogger for logging biosignals and alerts
 
     def monitor_patient(self, heart_rate, blood_pressure, oxygen_saturation):
+        # Validate input types
+        if not isinstance(heart_rate, int):
+            raise TypeError("Heart rate must be an integer.")
+        if not isinstance(blood_pressure, int):
+            raise TypeError("Blood pressure must be an integer.")
+        if not isinstance(oxygen_saturation, int):
+            raise TypeError("Oxygen saturation must be an integer.")
+        
         # Read signals
         statuses = self.device.read_signals(heart_rate, blood_pressure, oxygen_saturation)
         

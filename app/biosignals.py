@@ -6,6 +6,7 @@ import logging
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
 sys.path.insert(0, parent_dir)
+
 class Biosignal:
     """Base class for biosignals."""
     def __init__(self, name, safe_range):
@@ -14,7 +15,10 @@ class Biosignal:
         self.value = None
 
     def update_value(self, value):
-       
+        if not isinstance(value, int):
+            raise TypeError(f"{self.name} value must be an integer.")
+        if value < 0:
+            raise ValueError(f"{self.name} value cannot be negative.")
         self.value = value
         return self.check_threshold()
 

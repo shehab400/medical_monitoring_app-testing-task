@@ -36,6 +36,9 @@ class DataLogger:
             timestamp (str): The time the data was recorded.
             biosignal_data (dict): Dictionary containing biosignal information.
         """
+        if not isinstance(biosignal_data, dict):
+            raise TypeError("Biosignal data must be a dictionary.")
+        
         log_entry = {
             "timestamp": timestamp,
             "data": biosignal_data
@@ -50,6 +53,9 @@ class DataLogger:
             timestamp (str): The time the alert was triggered.
             alert_message (str): Description of the alert.
         """
+        if not isinstance(alert_message, str):
+            raise TypeError("Alert message must be a string.")
+        
         alert_entry = {
             "timestamp": timestamp,
             "alert": alert_message

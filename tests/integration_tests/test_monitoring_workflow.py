@@ -45,7 +45,6 @@ class TestMedicalMonitoringApp(unittest.TestCase):
         self.assertEqual(self.app.get_alerts(), [])
         mock_log_biosignal.assert_called_once()
         
-        
     @patch('app.monitoring_workflow.EmergencyService.contact_hospital')
     @patch('app.monitoring_workflow.EmergencyService.dispatch_ambulance')
     @patch('app.monitoring_workflow.DataLogger.log_alert')
@@ -62,6 +61,15 @@ class TestMedicalMonitoringApp(unittest.TestCase):
         self.assertIn("Ambulance dispatched to 987-654-321.", self.app.get_alerts())
         mock_log_alert.assert_any_call(self.timestamp, "Hospital contacted at 123-456-789.")
         mock_log_alert.assert_any_call(self.timestamp, "Ambulance dispatched to 987-654-321.")
+
+    def test_invalid_monitor_patient(self):
+        # Act & Assert
+        with self.assertRaises(TypeError):
+            self.app.monitor_patient(heart_rate="invalid", blood_pressure=120, oxygen_saturation=98)
+        with self.assertRaises(TypeError):
+            self.app.monitor_patient(heart_rate=75, blood_pressure="invalid", oxygen_saturation=98)
+        with self.assertRaises(TypeError):
+            self.app.monitor_patient(heart_rate=75, blood_pressure=120, oxygen_saturation="invalid")
 
 if __name__ == '__main__':
     unittest.main()
